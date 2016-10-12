@@ -27,6 +27,9 @@ namespace YAF.Controls
     #region Using
 
     using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Reflection;
     using System.Text;
     using System.Web;
     using System.Web.UI;
@@ -145,13 +148,15 @@ namespace YAF.Controls
 					extensions.Where(x => x.Contains(".Module")).ToDelimitedString("<br />"));
 			}
 
-			footer.AppendFormat(
-				@"<br /><br /><b>{0}</b> SQL Queries: <b>{1:N3}</b> Seconds (<b>{2:N2}%</b> of Total Page Load Time).<br />{3}", 
-				QueryCounter.Count, 
-				QueryCounter.Duration, 
-				(100 * QueryCounter.Duration) / this.Get<IStopWatch>().Duration, 
-				QueryCounter.Commands);
-			footer.Append("</div>");
+            //commented by ZHAOs@2016年9月29日13:57:49
+			//footer.AppendFormat(
+			//	@"<br /><br /><b>{0}</b> SQL Queries: <b>{1:N3}</b> Seconds (<b>{2:N2}%</b> of Total Page Load Time).<br />{3}", 
+			//	QueryCounter.Count, 
+			//	QueryCounter.Duration, 
+			//	(100 * QueryCounter.Duration) / this.Get<IStopWatch>().Duration, 
+			//	QueryCounter.Commands);
+			//footer.Append("</div>");
+
 #endif
         }
 

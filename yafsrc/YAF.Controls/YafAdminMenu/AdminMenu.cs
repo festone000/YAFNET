@@ -80,7 +80,7 @@ namespace YAF.Controls
 #if !DEBUG
                 var isVisible = !(item.Debug.IsSet() && Convert.ToBoolean(item.Debug));
 #endif
-                if (!isVisible)
+                if (!Visible)
                 {
                     continue;
                 }
